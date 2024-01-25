@@ -1,0 +1,44 @@
+using System;
+
+
+
+class Program
+    {
+
+      static void Main(string[] args )
+      {
+        Console.WriteLine("You are at the supermarket.");
+        Console.WriteLine("You want to make a fruit salad. What would you like to buy?");
+
+        string[] fruits = new string[] {"apples", "bananas", "oranges", "grapes", "strawberries", "blueberries"};
+        string[] fruitAmount = new string[6];
+
+        int fruitIndex =0;
+
+        foreach (var fruit in fruits)
+        {
+          Console.WriteLine($"Do you want to buy {fruit}? (yes/no)");
+          string input = Console.ReadLine().ToLower();
+
+          if (input == "yes")
+          {
+            fruitAmount[fruitIndex] = fruit;
+            fruitIndex++;
+            Console.WriteLine($"You bought {fruit}.");
+          }
+          else
+          {
+            Console.WriteLine($"You chose not to buy {fruit}.");
+          }
+        }
+        Console.WriteLine("\nYou bought the following fruits:");
+        foreach (var fruit in fruitAmount)
+        {
+          Console.WriteLine(fruit);
+        }
+
+        Console.WriteLine("\nPress any key to exit.");
+        Console.ReadKey();
+      }
+    }
+
